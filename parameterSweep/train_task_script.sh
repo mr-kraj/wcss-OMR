@@ -11,7 +11,7 @@ WORKDIR="parameterSweep"
 #cd /lustre/pd01/hpc-katjar5048-1762193819/OMR
 #source .venv/bin/activate
 
-python train_script.py \
+python parameterSweep/train_script.py \
   --csv "$CSV_PATH" \
   --idx "$IDX" \
   --data "$DATA_YAML" \
