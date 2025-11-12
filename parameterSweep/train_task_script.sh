@@ -16,4 +16,5 @@ python train_script.py \
   --idx "$IDX" \
   --data "$DATA_YAML" \
   --model "$MODEL" \
-  --workdir "$WORKDIR"
+  --workdir "$WORKDIR" \
+  --results_csv "$WORKDIR/runs/results.csv"
