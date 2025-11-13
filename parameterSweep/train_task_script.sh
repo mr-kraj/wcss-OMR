@@ -17,4 +17,4 @@ python train_script.py \
   --data "$DATA_YAML" \
   --model "$MODEL" \
   --workdir "$WORKDIR" \
-  --results_csv "$WORKDIR/runs/results.csv"
+  --results_csv "$WORKDIR/runs/results_${SLURM_JOB_ID}.csv"
