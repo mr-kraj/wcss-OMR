@@ -3,7 +3,7 @@ set -euo pipefail
 
 IDX=${SLURM_ARRAY_TASK_ID}
 CSV_PATH="parameterSweep/sweep_configs.csv"
-DATA_YAML="datasets\deepscores\ds2_dense_prepared\deep_scores.yaml"
+DATA_YAML="datasets/deepscores/ds2_dense_prepared/deep_scores.yaml"
 MODEL="yolov8n.pt"
 WORKDIR=$(pwd)
 
