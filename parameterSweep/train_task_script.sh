@@ -3,18 +3,14 @@ set -euo pipefail
 
 IDX=${SLURM_ARRAY_TASK_ID}
 CSV_PATH="sweep_configs.csv"
-DATA_YAML="deep_scores.yaml"
+DATA_YAML="datasets\deepscores\ds2_dense_prepared\deep_scores.yaml"
 MODEL="yolov8n.pt"
-WORKDIR="parameterSweep"
+WORKDIR=""
 
-#module load Python/3.11.3-GCCcore-12.3.0
-#cd /lustre/pd01/hpc-katjar5048-1762193819/OMR
-#source .venv/bin/activate
-
-python train_script.py \
+python parameterSweep/train_script.py \
   --csv "$CSV_PATH" \
   --idx "$IDX" \
   --data "$DATA_YAML" \
   --model "$MODEL" \
   --workdir "$WORKDIR" \
-  --results_csv "$WORKDIR/runs/results_${SLURM_JOB_ID}.csv"
+  --results_csv "$WORKDIR/parameterSweep/runs/results_${SLURM_JOB_ID}.csv"
