@@ -6,7 +6,7 @@ from ultralytics import YOLO
 def load_config(csv_path, idx):
     with open(csv_path, newline='') as f:
         reader = list(csv.DictReader(f))
-    row = reader[idx]
+    row = reader[int(idx)]
     for k, v in row.items():
         try:
             row[k] = float(v) if "." in v else int(v)
