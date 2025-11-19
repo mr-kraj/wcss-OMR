@@ -2,15 +2,19 @@
 set -euo pipefail
 
 IDX=${SLURM_ARRAY_TASK_ID}
-CSV_PATH="parameterSweep/sweep_configs.csv"
-DATA_YAML="datasets/deepscores/ds2_dense_prepared/deep_scores.yaml"
-MODEL="yolov8n.pt"
-WORKDIR=$(pwd)
+CURRENT_DIR=$(pwd)
+CSV_PATH="${CURRENT_DIR}/parameterSweep/sweep_configs.csv"
+DATA_YAML="${CURRENT_DIR}/datasets/deepscores/ds2_dense_prepared/deep_scores.yaml"
+MODEL="yolo11n.pt"
+WORKDIR="${CURRENT_DIR}/parameterSweep/runs/results_${SLURM_ARRAY_JOB_ID}"
+GPU_COUNT=${SLURM_GPUS_ON_NODE}
+NODE_COUNT=${SLURM_NNODES}
 
-python parameterSweep/train_script.py \
-  --csv "$WORKDIR/$CSV_PATH" \
+python -m torch.distributed.run --nproc_per_node ${GPU_COUNT} --nnodes ${NODE_COUNT} parameterSweep/train_script.py \
+  --csv "$CSV_PATH" \
   --idx "$IDX" \
-  --data "$WORKDIR/$DATA_YAML" \
+  --data "$DATA_YAML" \
   --model "$MODEL" \
   --workdir "$WORKDIR" \
-  --results_csv "$WORKDIR/parameterSweep/runs/results_${SLURM_JOB_ID}.csv"
+  --gpuCount "${GPU_COUNT}" \
+  --results_csv "${CURRENT_DIR}/parameterSweep/runs/results_${SLURM_ARRAY_JOB_ID}/results_${SLURM_ARRAY_JOB_ID}.csv"

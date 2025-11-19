@@ -6,7 +6,7 @@ import random
 OUT = Path("sweep_configs.csv")
 space = {
     "lr": [1e-3, 5e-4, 1e-4],
-    "batch": [4, 8, 16],
+    "batch": [4, 8, 16, 24],
     "epochs": [50, 100],
     "imgsz": [1024],
 }
