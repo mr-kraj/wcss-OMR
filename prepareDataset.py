@@ -65,7 +65,7 @@ def write_yaml_dataset(path, train_path, val_path, label_df=None, filename='deep
     with open(filename, 'w') as yaml_file:
         yaml_file.write(yaml_text)
 
-write_yaml_dataset(source_dataset_path, train_dir_relative, test_dir_relative, labels, filename=dataset_path / 'deep_scores.yaml')
+write_yaml_dataset(dataset_path, train_dir_relative, test_dir_relative, labels, filename=dataset_path / 'deep_scores.yaml')
 
 print("YAML created.")
 
