@@ -1,6 +1,0 @@
-PyYAML
-pandas
-numpy
-shapely
-torch
-ultralytics
