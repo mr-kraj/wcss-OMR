@@ -1,0 +1,10 @@
+=== per-process env preview ===
+RANK=None
+LOCAL_RANK=None
+WORLD_SIZE=None
+MASTER_ADDR=None
+MASTER_PORT=None
+SLURM_PROCID=1
+CUDA_VISIBLE_DEVICES=0,1,2,3
+hostname: r18-4.lem.kdm.wcss.pl
+dist error: Error initializing torch.distributed using env:// rendezvous: environment variable RANK expected, but not set

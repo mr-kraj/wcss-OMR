@@ -1,3 +1,0 @@
-#!/bin/bash
-module load Python/3.11.3-GCCcore-12.3.0
-source .venv/bin/activate

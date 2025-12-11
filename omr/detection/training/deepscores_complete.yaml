@@ -1,0 +1,44 @@
+path: /lustre/pd01/hpc-katjar5048-1762193819/OMR/omr/detection/training/datasets/deepscores/prepared_ds2_complete
+train: images/train
+val: images/test
+names:
+  0: ledgerLine
+  1: clefG
+  2: clefCAlto
+  3: clefCTenor
+  4: clefF
+  5: timeSig0
+  6: timeSig1
+  7: timeSig2
+  8: timeSig3
+  9: timeSig4
+  10: timeSig5
+  11: timeSig6
+  12: timeSig7
+  13: timeSig8
+  14: timeSig9
+  15: timeSigCommon
+  16: timeSigCutCommon
+  17: noteheadBlackOnLine
+  18: noteheadBlackInSpace
+  19: noteheadHalfOnLine
+  20: noteheadHalfInSpace
+  21: noteheadWholeOnLine
+  22: noteheadWholeInSpace
+  23: augmentationDot
+  24: stem
+  25: flag8thUp
+  26: flag16thUp
+  27: flag32ndUp
+  28: flag8thDown
+  29: flag16thDown
+  30: flag32ndDown
+  31: accidentalFlat
+  32: accidentalNatural
+  33: accidentalSharp
+  34: restWhole
+  35: restHalf
+  36: restQuarter
+  37: rest8th
+  38: rest16th
+  39: beam

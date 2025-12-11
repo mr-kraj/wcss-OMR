@@ -1,0 +1,5 @@
+{
+    "modelPath": "/omr/detection/trained_moidel.pt",
+    "segmenter_threshold": 5,
+    "segmenter_tolerance": 10
+}

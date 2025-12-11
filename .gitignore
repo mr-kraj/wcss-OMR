@@ -1,3 +1,6 @@
-
-/omr/detection/datasets
+/omr/detection/training/datasets
+/omr/detection/training/datasets/deepscores/ds2_complete
+/omr/detection/traninig/datasets/deepscores/prepared_ds2_complete
+/omr/detection/training/training_runs
+/omr/detection/training/parameterSweep/runs
 /parameterSweep/wcss.code-workspace

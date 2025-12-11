@@ -1,0 +1,6 @@
+{"modelPath": "/omr/detection/scanner/trained.pt",
+"default_result_dir": "/omr/detection/scanner/results/",
+"default_preprocessing_dir":"/omr/detection/scanner/preprocessing/",
+"segmenter_threshold": 5,
+"segmenter_tolerance": 10
+}

@@ -1,0 +1,14 @@
+{
+    "training_dir_global_path": "/lustre/pd01/hpc-katjar5048-1762193819/OMR/omr/detection/training",
+    "training_result_dir_path": "training_runs",
+    "yaml_path": "deepscores_complete.yaml",
+    "base_model_path": "yolo11x.pt",
+    "model_init_weights_path": "",
+    "epochs": 300,
+    "lr": 0.005,
+    "imgsz": 1024,
+    "optimizer": "AdamW",
+    "workers": 16,
+    "batch": 48
+}
+   
