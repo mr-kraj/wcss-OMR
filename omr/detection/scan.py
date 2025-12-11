@@ -2,7 +2,6 @@ import argparse
 import sys
 import os
 import cv2
-import supervision as sv
 import json
 import torch
 from ultralytics import YOLO
@@ -10,7 +9,7 @@ from ultralytics import YOLO
 import omr.preprocessing.segmenter as segmenter
 
 BASE_PATH = os.environ.get("BASE_PATH", ".")
-CONFIG = parse_CONFIG(BASE_PATH + "/omr/detection/scanner_CONFIG.json")
+CONFIG = parse_config(BASE_PATH + "/omr/detection/scanner_CONFIG.json")
 
 def extract_labels_for_boxes(results, model):
     boxes = results.boxes
@@ -31,7 +30,6 @@ def parse_to_list(results, labels):
     return parsed
 
 def parse_config(path):
-    # TODO FIX THIS!!!!
     config = json.load(path)
 
     for key in CONFIG:
@@ -57,13 +55,6 @@ def main():
 
     labels = extract_labels_for_boxes(results[0], model)
 
-    # For debugging purposes only - save annotated images
-    
-    import omr.detection.scanner.scan as scan
-    for i in range(len(results)):
-        os.makedirs(BASE_PATH + "/omr/detection/.temp/segmented/", exist_ok=True)
-        scan.save_file(results[i], labels, BASE_PATH + "/omr/detection/.temp/segmented/result_" + str(i) + ".png")
-    
     return [parse_to_list(result, labels) for result in results]
 
 if __name__ == "__main__":
